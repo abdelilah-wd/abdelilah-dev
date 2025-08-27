@@ -89,18 +89,18 @@ canvas {
   padding: 10px 15px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.151);
-  color: white;
+  color: #00f0f2;
   text-decoration: none;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 600;
   transition: 0.5s;
 }
 
 .header-section .links li a:hover {
-  background-color: rgba(109, 109, 109, 0.421);
-  text-shadow: 0px 0 10px #ffffff9c;
+  background-color: rgba(177, 177, 177, 0.421);
+  text-shadow: 0px 0 10px #007878;
 }
 
 @media (max-width: 992px) {
@@ -221,10 +221,71 @@ canvas {
 .hero-section .hero-content .btns {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   width: 100%;
   margin-top: 2rem;
+}
+
+@media (max-width: 567px) {
+  .hero-section .hero-content .btns {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.hero-section .hero-content .btns .btn {
+  border-radius: 5px;
+  color: #00f0f2;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 2px solid #00f0f2;
+}
+
+.hero-section .hero-content .btns .btn:hover {
+  text-shadow: 0 0 20px #00f0f2;
+  background-color: transparent;
+  transform: scale(1.05);
+}
+
+.hero-section .hero-content .btns .links-btn a {
+  color: #f9f900;
+  font-size: 22px;
+  margin: 0 4px;
+  display: inline-block;
+  transition: 0.5s;
+
+}
+
+.hero-section .hero-content .btns .links-btn a:hover {
+  transform: scale(1.3) s;
+  text-shadow: 0 0 10px #f9f900;
+}
+
+.hero-section .go-down {
+  position: absolute;
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00f0f2;
+  text-decoration: none;
+  animation: 0.3s up_down_ani ease-out alternate infinite;
+}
+.hero-section .go-down:hover {
+  text-shadow: 0 0 20px #00f0f2 ;
+
+}
+@keyframes up_down_ani{
+  to {
+    bottom: 10px ;
+  }
 }
 
 /* @keyframes cursor_animation {
