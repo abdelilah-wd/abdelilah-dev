@@ -2,8 +2,6 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-document.querySelector(".layer").width = window.innerWidth;
-document.querySelector(".layer").height = window.innerHeight;
 
 let mouse = { x: null, y: null };
 
@@ -17,7 +15,7 @@ class Particle {
         this.size = Math.random() * 17 + 3; // بين 3 و 20
         this.x = Math.random() * canvas.width;
         this.vy = Math.random() * 0.6 + 0.2; // سرعة بطيئة (0.2–0.8)
-        this.color = Math.random() < 0.35 ? "#00d9ff" : Math.random() < 0.6 ? "#e400e0ff" : "#ffcc00";
+        this.color = Math.random() < 0.35 ? "#00d9ff53" : Math.random() < 0.6 ? "#e400e05d" : "#ffcc0066";
 
         if (initial) {
             // البداية: موزعة عشوائيًا في منتصف الشاشة
@@ -37,7 +35,7 @@ class Particle {
             this.x = Math.random() * canvas.width;
             this.y = canvas.height + this.size;
             this.vy = Math.random() * 1 + 0.2;
-            this.color = Math.random() < 0.35 ? "#00d9ff" : Math.random() < 0.7 ? "#e400e0ff" : "#ffcc00";
+            this.color = Math.random() < 0.35 ? "#00d9ff53" : Math.random() < 0.6 ? "#e400e05d" : "#ffcc0066";
         }
     }
     
@@ -64,7 +62,7 @@ function drawStar(ctx, x, y, spikes, outerRadius, innerRadius, color) {
 }
 
 let particles = [];
-const numParticles = 40;
+const numParticles = 25;
 
 // أول إنشاء: موزعة في المنتصف
 for (let i = 0; i < numParticles; i++) {
@@ -127,6 +125,4 @@ animate();
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    document.querySelector(".layer").width = window.innerWidth;
-    document.querySelector(".layer").height = window.innerHeight;
 });
