@@ -2,6 +2,8 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+document.querySelector(".layer").width = window.innerWidth;
+document.querySelector(".layer").height = window.innerHeight;
 
 let mouse = { x: null, y: null };
 
@@ -125,4 +127,6 @@ animate();
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    document.querySelector(".layer").width = window.innerWidth;
+    document.querySelector(".layer").height = window.innerHeight;
 });
