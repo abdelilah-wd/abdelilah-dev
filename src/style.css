@@ -1,4 +1,9 @@
-:root {}
+:root {
+  --section-padding: 120px;
+  --purple-color: #e400e0;
+  --blue-color: #00f0f2;
+  --yellow-color: #f9f900;
+}
 
 * {
   margin: 0;
@@ -12,7 +17,7 @@ html {
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background: #0e1218;
+  background: #090c10;
 }
 
 ul {
@@ -27,9 +32,8 @@ canvas {
   width: 100%;
   height: 100vh;
 }
-canvas::before {
 
-}
+canvas::before {}
 
 .layer {
   position: absolute;
@@ -92,10 +96,10 @@ canvas::before {
   padding: 10px 15px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.151);
-  color: #00f0f2;
+  color: var(--blue-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.5s;
@@ -104,12 +108,6 @@ canvas::before {
 .header-section .links li a:hover {
   background-color: rgba(177, 177, 177, 0.421);
   text-shadow: 0px 0 10px #007878;
-}
-
-@media (max-width: 992px) {
-  .header-section .links li a {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -172,7 +170,7 @@ canvas::before {
 
 .hero-section .hero-content h4 {
   font-size: 2rem;
-  color: #f9f900;
+  color: var(--yellow-color);
   font-weight: 900;
 }
 
@@ -189,11 +187,10 @@ canvas::before {
 .hero-section .hero-content h3 span {
   font-size: 2.5rem;
   margin-left: 10px;
-  animation: cursor_animation 0.5s linear infinite;
-  color: #8e00c8;
+  color: var(--purple-color);
   font-weight: 900;
-  color: #f9f900;
-  color: #00f0f2;
+  color: var(--yellow-color);
+  color: var(--blue-color);
 }
 
 @media (max-width: 758px) {
@@ -238,37 +235,36 @@ canvas::before {
 
 .hero-section .hero-content .btns .btn {
   border-radius: 5px;
-  color: #00f0f2;
+  color: var(--blue-color);
   font-weight: bold;
   text-transform: uppercase;
   padding: 10px 15px;
   transition: 0.5s;
-  border: 2px solid #00f0f2;
+  border: 2px solid var(--blue-color);
 }
 
 .hero-section .hero-content .btns .btn:hover {
-  text-shadow: 0 0 20px #00f0f2;
+  text-shadow: 0 0 20px var(--blue-color);
   background-color: transparent;
   transform: scale(1.05);
 }
 
 .hero-section .hero-content .btns .links-btn a {
-  color: #f9f900;
+  color: var(--yellow-color);
   font-size: 22px;
   margin: 0 4px;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.5s;
 
 }
 
 .hero-section .hero-content .btns .links-btn a:hover {
   transform: scale(1.3);
-  text-shadow: 0 0 10px #f9f900;
+  text-shadow: 0 0 10px var(--yellow-color);
 }
 
 .hero-section .go-down {
   position: absolute;
-
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -277,26 +273,156 @@ canvas::before {
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #00f0f2;
+  color: var(--blue-color);
   text-decoration: none;
   animation: 0.3s up_down_ani ease-out alternate infinite;
 }
+
 .hero-section .go-down:hover {
-  text-shadow: 0 0 20px #00f0f2 ;
+  text-shadow: 0 0 20px var(--blue-color);
 
 }
-@keyframes up_down_ani{
+
+@keyframes up_down_ani {
   to {
-    bottom: 10px ;
+    bottom: 10px;
   }
 }
 
-/* @keyframes cursor_animation {
-  from {
-    border-right: 4px solid yellow;
-  }
+.about-section {
+  position: relative;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  color: white;
+}
 
-  to {
-    border-right: none;
-  }
-} */
+.about-section .about-content {
+  position: relative;
+}
+
+
+.about-section .about-content .img img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.about-section .img span {
+  position: absolute;
+  background-color: transparent;
+  color: var(--blue-color);
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: block;
+  border-radius: 6px;
+  border: 2px solid var(--blue-color);
+  text-align: center;
+  line-height: 40px;
+  text-shadow: 0 0 20px var(--blue-color);
+  transition: 1s;
+}
+
+.about-section .img span:hover {
+  transform: scale(1.2);
+}
+
+.about-section .img span:nth-child(1) {
+  color: var(--yellow-color);
+  text-shadow: 0 0 20px var(--yellow-color);
+  border-color: var(--yellow-color);
+  top: -40px;
+  left: -30px;
+}
+
+.about-section .img span:nth-child(2) {
+  color: var(--yellow-color);
+  text-shadow: 0 0 20px var(--yellow-color);
+  border-color: var(--yellow-color);
+  bottom: -40px;
+  left: 50%;
+}
+
+.about-section .img span:nth-child(3) {
+  color: var(--blue-color);
+  text-shadow: 0 0 20px var(--blue-color);
+  border-color: var(--blue-color);
+  top: 50px;
+  right: 100px;
+}
+
+.about-section .img span:nth-child(4) {
+  color: var(--purple-color);
+  text-shadow: 0 0 20px var(--purple-color);
+  border-color: var(--purple-color);
+  top: -50px;
+  right: 50%;
+}
+
+.about-section .img span:nth-child(5) {
+  color: var(--purple-color);
+  text-shadow: 0 0 20px var(--purple-color);
+  border-color: var(--purple-color);
+  bottom: -15px;
+  left: -10px;
+}
+
+.main-heading {
+  background: var(--yellow-color);
+  padding: 10px 15px;
+  width: fit-content;
+  border-radius: 5px;
+  color: black;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.main-heading.yellow {
+  background: var(--yellow-color);
+}
+
+.main-heading.blue {
+  background: var(--blue-color);
+}
+
+.main-heading.purple {
+  background: var(--purple-color);
+}
+
+.main-heading h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-family: 'Goldman', sans-serif;
+}
+
+.about-section .info p {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.about-section .about-content .info .prog-lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-section .about-content .info .prog-lang span {
+  padding: 4px 6px;
+  border: 2px solid var(--blue-color);
+  font-family: 'Goldman';
+  font-size: 15px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  color: var(--blue-color);
+  text-shadow: 0 0 10px #00f0f261;
+  box-shadow: 0 0 10px 0px #00f2f24a;
+  transition: 0.8s;
+}
+
+.about-content .info .prog-lang span:hover {
+  transform: scale(1.1);
+}
