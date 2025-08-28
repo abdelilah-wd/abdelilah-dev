@@ -438,7 +438,36 @@ canvas::before {}
   transition: 0.8s;
 }
 
-.about-content .info .prog-lang span:hover {
+.about-section .about-content .info .prog-lang span.blue {
+  text-shadow: 0 0 10px #00f0f261;
+  box-shadow: 0 0 10px 0px #00f2f24a;
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+
+.about-section .about-content .info .prog-lang span.yellow {
+  text-shadow: 0 0 10px #f9f90077;
+  box-shadow: 0 0 10px 0px #f9f90044;
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
+}
+
+.about-section .about-content .info .prog-lang span.purple {
+  text-shadow: 0 0 10px #e400e076;
+  box-shadow: 0 0 10px 0px #e400e058;
+  border-color: var(--purple-color);
+  color: var(--purple-color);
+}
+
+.about-content .info .prog-lang span.blue:hover {
   transform: scale(1.1);
-  background-color: #00f2f22a;
+  background-color: #00f2f230;
+}
+.about-content .info .prog-lang span.purple:hover {
+  transform: scale(1.1);
+  background-color: #e400e02b;
+}
+.about-content .info .prog-lang span.yellow:hover {
+  transform: scale(1.1);
+  background-color: #f9f9002e;
 }
