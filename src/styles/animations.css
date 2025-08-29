@@ -1,0 +1,25 @@
+.hero-section .go-down {
+    animation: 0.3s to_down_ani ease-out alternate infinite;
+}
+
+@keyframes to_down_ani {
+    to {
+        bottom: 10px;
+    }
+}
+
+.about-section .img span {
+    animation: up-down-animation 2s linear alternate infinite;
+}
+
+@keyframes up-down-animation {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes move-right {
+    to {
+        margin: -10px;
+    }
+}
