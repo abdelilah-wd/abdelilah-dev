@@ -449,6 +449,13 @@ canvas::before {}
   padding: 5px;
   transition: 0.5s;
 }
+
+@media (max-width: 768px) {
+  .work-section .work-content .project {
+    padding: 5px 15px;
+  }
+}
+
 .work-section .work-content .project:hover {
   transform: scale(1.05);
   z-index: 100;
@@ -543,23 +550,23 @@ canvas::before {}
   box-shadow: 0px -9px 20px 14px #0000004d;
 }
 
-.work-content .content .bottom-content .see-more {
-  background-color: transparent;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
+.work-content .project .content .bottom-content .links a {
   font-family: var(--font-goldman);
-  text-transform: uppercase;
-  margin-right: 1.5rem;
   color: white;
-  position: relative;
+  border: 2px solid #5e00d1;
+  background: #5e00d1;
+  padding: 5px 6px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.5s;
 }
 
-.work-content .content .bottom-content span {
-  transform: 0.5s;
-  position: absolute;
-  right: 12px;
-  animation: move-right 1s linear alternate infinite;
+.work-content .project .content .bottom-content .links a:hover {
+  background: #2d0063;
 }
 
 /* End Work Section */

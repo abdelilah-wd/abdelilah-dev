@@ -8,6 +8,7 @@ import './components/particles.js'
 import { startTyping } from './components/typing_animation.js'
 
 // Initialize when DOM is ready
+
 document.addEventListener('DOMContentLoaded', function () {
   startTyping();
 });
