@@ -504,7 +504,7 @@ canvas::before {}
   color: #ffffff;
 }
 
-.work-content .project .content .most-lang {
+.work-content .project .content .project-lang {
   padding: 10px 40px;
   background: #004fd8;
   width: fit-content;
@@ -516,23 +516,34 @@ canvas::before {}
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.168);
   transition: 0.5s;
   border-radius: 5px;
+  width: 120px;
+  height: 70px;
+  overflow: hidden;
 }
 
-.work-content .project .content .most-lang span {
-  transform: skewX(17deg);
+.work-content .project .content .project-lang span {
   display: block;
   font-size: 30px;
   color: var(--yellow-color);
   padding: 0;
   text-shadow: 0 0 14px #f9f90045;
+  transition: 0.5s;
+  position: absolute;
+  transform: scale(0) skewX(17deg);
+  opacity: 0;
 }
 
-.work-content .project .content .most-lang span.yellow {
+.work-content .project .content .project-lang span.active{
+  transform: scale(1) skewX(17deg);
+  opacity: 1;
+}
+
+.work-content .project .content .project-lang span.yellow {
   color: var(--yellow-color);
   text-shadow: 0 0 14px #f9f90045;
 }
 
-.work-content .project .content .most-lang span.orange {
+.work-content .project .content .project-lang span.orange {
   color: orangered;
   text-shadow: 0 0 20px #ff450080;
 }
