@@ -445,6 +445,55 @@ canvas::before {}
 /* Start Work Section */
 .work-section {}
 
+.work-section .work-content>p {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  color: white;
+  font-family: var(--font-goldman);
+  text-align: center;
+}
+
+.work-section .work-content>p a {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--yellow-color);
+  text-decoration: none;
+  line-height: 1.5;
+  transition: 0.5s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  width: fit-content;
+  margin: auto;
+}
+
+.work-content>p a span {
+  transition: 0.5s;
+  transform: scale(1);
+  opacity: 1;
+  position: absolute;
+}
+
+.work-content>p a:hover span {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.work-content>p a i {
+  transition: 0.5s;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.work-content>p a:hover i {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
 .work-section .work-content .project {
   padding: 5px;
   transition: 0.5s;
@@ -457,7 +506,7 @@ canvas::before {}
 }
 
 .work-section .work-content .project:hover {
-  transform: scale(1.05);
+  transform: scale(1.02) translateY(-10px);
   z-index: 100;
 }
 
@@ -519,33 +568,22 @@ canvas::before {}
   width: 120px;
   height: 70px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.work-content .project .content .project-lang span {
-  display: block;
-  font-size: 30px;
-  color: var(--yellow-color);
-  padding: 0;
-  text-shadow: 0 0 14px #f9f90045;
-  transition: 0.5s;
+.work-content .project .content .project-lang img {
+  width: 30px;
   position: absolute;
   transform: scale(0) skewX(17deg);
   opacity: 0;
+  transition: 0.5s;
 }
 
-.work-content .project .content .project-lang span.active{
+.work-content .project .content .project-lang img.active {
   transform: scale(1) skewX(17deg);
   opacity: 1;
-}
-
-.work-content .project .content .project-lang span.yellow {
-  color: var(--yellow-color);
-  text-shadow: 0 0 14px #f9f90045;
-}
-
-.work-content .project .content .project-lang span.orange {
-  color: orangered;
-  text-shadow: 0 0 20px #ff450080;
 }
 
 .work-content .project .content .bottom-content {

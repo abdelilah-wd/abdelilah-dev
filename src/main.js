@@ -12,9 +12,9 @@ import { startTyping } from './components/typing_animation.js'
 document.addEventListener('DOMContentLoaded', function () {
   startTyping();
 });
-let plang_1 = document.querySelectorAll(".project-lang.p1 span");
-let plang_2 = document.querySelectorAll(".project-lang.p2 span");
-let plang_3 = document.querySelectorAll(".project-lang.p3 span");
+let plang_1 = document.querySelectorAll(".project-lang.p1 img");
+let plang_2 = document.querySelectorAll(".project-lang.p2 img");
+let plang_3 = document.querySelectorAll(".project-lang.p3 img");
 let project_lang_list = [plang_1, plang_2, plang_3];
 let index1 = 0;
 let index2 = 0;
