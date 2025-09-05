@@ -62,7 +62,7 @@ canvas::before {}
 .header-section {
   width: 100%;
   padding: 10px 10px;
-  z-index: 1;
+  z-index: 102;
   position: relative;
 }
 
@@ -83,6 +83,27 @@ canvas::before {}
   margin: auto;
   flex-wrap: wrap;
   border-radius: 8px;
+  transition: 0.5s;
+}
+
+.header-section.fixed,
+.header-section.fixing-anim {
+  position: fixed;
+}
+
+.header-section.fixing-anim .links {
+  background-image: linear-gradient(93deg, #40404094, #38383873);
+  box-shadow: 0 0 10px 0px #ffffff40;
+}
+
+.header-section.fixed .links {
+  background-image: linear-gradient(93deg, #40404094, #38383873);
+  box-shadow: 0 0 10px 0px #ffffff40;
+  transform: translateY(-8rem);
+}
+
+.header-section.fixed:hover .links {
+  transform: translateY(0rem);
 }
 
 @media (max-width: 992px) {
@@ -102,7 +123,7 @@ canvas::before {}
 .header-section .links li a {
   padding: 10px 15px;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.151);
+  background: rgb(148 148 148 / 9%);
   color: var(--blue-color);
   text-decoration: none;
   font-weight: 600;
@@ -110,23 +131,30 @@ canvas::before {}
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.5s;
+  box-shadow: 0 0 5px #ffffff33;
+  font-weight: bold;
 }
 
-.header-section .links li a:hover {
-  background-color: rgba(177, 177, 177, 0.421);
-  text-shadow: 0px 0 10px #007878;
+.header-section .links li a.active {
+  background: white;
+  color: black;
+}
+
+.header-section .links li a:not(.active):hover {
+  background-color: rgba(201, 201, 201, 0.603);
+  text-shadow: 0px 0 10px #03efef;
 }
 
 @media (max-width: 768px) {
   .header-section .links li a {
-    padding: 8px 12px;
+    padding: 12px 15px;
     font-size: 13px;
   }
 }
 
 @media (max-width: 460px) {
   .header-section .links li a {
-    padding: 5px 10px;
+    padding: 10px 15px;
     font-size: 10px;
   }
 }
@@ -476,6 +504,7 @@ canvas::before {}
   transform: scale(1);
   opacity: 1;
   position: absolute;
+  padding: 4px 15px;
 }
 
 .work-content>p a:hover span {
@@ -487,11 +516,23 @@ canvas::before {}
   transition: 0.5s;
   transform: scale(0);
   opacity: 0;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 6px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-content>p a:hover i {
   transform: scale(1.2);
   opacity: 1;
+}
+
+.work-content>p a span,
+.work-content>p a i {
+  border: 1px solid;
+  border-radius: 6px;
 }
 
 .work-section .work-content .project {
@@ -616,6 +657,11 @@ canvas::before {}
 
 .work-content .project .content .bottom-content .links a:hover {
   background: #2d0063;
+}
+
+.square {
+  height: 50px;
+  background-color: #00f0f261;
 }
 
 /* End Work Section */

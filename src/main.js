@@ -2,14 +2,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import { Dropdown, Collapse } from 'bootstrap'
 import './style.css'
-import './styles/component.css'
-import './styles/animations.css'
-import './components/particles.js'
+import './styles/component.css' ;
+import './styles/animations.css' ;
+import './components/particles.js';
+import { animate } from 'animejs';
 import { startTyping } from './components/typing_animation.js'
 
 // Initialize when DOM is ready
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded',  () => {
   startTyping();
 });
 let plang_1 = document.querySelectorAll(".project-lang.p1 img");
@@ -34,3 +35,32 @@ let interval = setInterval(() => {
   index2++;
   index3++;
 }, 2000);
+
+let menuLinks = document.querySelectorAll(".header-section .links li a")
+let header_section = document.querySelector(".header-section")
+let home_section = document.getElementById("home")
+let about_section = document.querySelector(".about-section");
+let work_section = document.querySelector(".work-section");
+let contact_section = document.querySelector(".contact-section")
+let all_sections = [home_section, about_section, work_section, contact_section];
+window.addEventListener("scroll", event => {
+  all_sections.forEach((ele, index) => {
+    console.log(window.scrollY);
+    if (window.scrollY > 600) {
+      header_section.classList.add("fixing-anim");
+      setTimeout(() => {
+        header_section.classList.remove("fixing-anim");
+        header_section.classList.add("fixed");
+      }, 2000);
+    } else {
+      header_section.classList.remove("fixed");
+      header_section.classList.remove("fixing-anim");
+    }
+    let offsetTop = ele.offsetTop - 20;
+    let offsetBottom = ele.offsetTop + ele.offsetHeight;
+    if (offsetTop < window.scrollY && offsetBottom > window.scrollY){
+      menuLinks.forEach((ele) => ele.classList.remove("active"));
+      menuLinks[index].classList.add("active");
+    }
+  })
+})
