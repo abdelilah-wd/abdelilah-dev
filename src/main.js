@@ -47,14 +47,9 @@ window.addEventListener("scroll", event => {
   all_sections.forEach((ele, index) => {
     console.log(window.scrollY);
     if (window.scrollY > 600) {
-      header_section.classList.add("fixing-anim");
-      setTimeout(() => {
-        header_section.classList.remove("fixing-anim");
-        header_section.classList.add("fixed");
-      }, 2000);
+      header_section.classList.add("fixed");
     } else {
       header_section.classList.remove("fixed");
-      header_section.classList.remove("fixing-anim");
     }
     let offsetTop = ele.offsetTop - 20;
     let offsetBottom = ele.offsetTop + ele.offsetHeight;
