@@ -378,7 +378,7 @@ canvas {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -402,9 +402,9 @@ canvas {
   text-shadow: 0 0 10px #00f0f261;
   box-shadow: 0 0 10px 0px #00f2f24a;
   transition: 0.8s;
-  display:flex;
+  display: flex;
   align-items: center;
-  justify-content:center ;
+  justify-content: center;
   gap: 3px;
 }
 
@@ -454,59 +454,6 @@ canvas {
   color: white;
   font-family: var(--font-goldman);
   text-align: center;
-}
-
-.work-section .work-content>p a {
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--yellow-color);
-  text-decoration: none;
-  line-height: 1.5;
-  transition: 0.5s;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  width: fit-content;
-  margin: auto;
-}
-
-.work-content>p a span {
-  transition: 0.5s;
-  transform: scale(1);
-  opacity: 1;
-  position: absolute;
-  padding: 4px 15px;
-}
-
-.work-content>p a:hover span {
-  transform: scale(0);
-  opacity: 0;
-}
-
-.work-content>p a i {
-  transition: 0.5s;
-  transform: scale(0);
-  opacity: 0;
-  border: 1px solid;
-  border-radius: 6px;
-  padding: 6px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.work-content>p a:hover i {
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-.work-content>p a span,
-.work-content>p a i {
-  border: 1px solid;
-  border-radius: 6px;
 }
 
 .work-section .work-content .project {
@@ -639,3 +586,153 @@ canvas {
 }
 
 /* End Work Section */
+/* Start Contact Section  */
+.contact-section {}
+
+.contact-section .row .contact-info {
+  padding: 20px;
+}
+
+.contact-info p {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--font-goldman);
+  margin-bottom: 1rem;
+}
+
+.contact-info>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-info>div a {
+  color: var(--yellow-color);
+  font-size: 22px;
+  margin: 0 4px;
+  display: inline-block;
+  transition: 0.5s;
+
+}
+
+.contact-info>div a:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 10px var(--yellow-color);
+}
+
+.contact-section .row .contact-form {
+  padding: 30px 10px;
+  border-radius: 10px;
+  background-color: rgb(192 0 209 / 40%);
+  box-shadow: 0 0 20px #71007f96;
+  position: relative;
+}
+
+.contact-form::after,
+.contact-form::before {
+  content: "";
+  background: transparent;
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  z-index: 80;
+  border: 2px solid var(--blue-color);
+  border-radius: 10px 0px;
+  transition:1.5s;
+}
+
+.contact-form::after {
+  border-right: none;
+  border-bottom: none;
+  top: 0;
+  left: 0;
+}
+
+.contact-form::before {
+  border-left: none;
+  border-top: none;
+  bottom: 0;
+  right: 0;
+}
+
+.contact-form:hover::after,
+.contact-form:hover::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.contact-section .contact-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;z-index: 81;
+}
+
+.contact-section .row .contact-form div {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.contact-section .contact-form label {
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  font-size: 15px;
+  color: black;
+  font-family: var(--font-goldman);
+  transition: 0.5s;
+}
+
+.contact-section .contact-form textarea {
+  height: 120px;
+}
+
+.contact-section .contact-form .client-input {
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: var(--font-inter);
+  background: white;
+  border: 1px solid black;
+  font-weight: 600;
+  box-shadow: 0 0 20px #0000008c;
+}
+
+.contact-section .contact-form .client-input:focus+label,
+.contact-section .contact-form div>label.active {
+  top: -10px;
+  left: 6px;
+  font-size: 12px;
+  transition: 0.5s;
+  background: white;
+  border-radius: 4px;
+  padding: 0px 8px;
+  border: 1px solid black;
+}
+
+/* End Contact Section  */
+
+.footer-section p {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: white;
+  padding: 15px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-top: 2px solid #444;
+  font-family: var(--font-goldman);
+}
